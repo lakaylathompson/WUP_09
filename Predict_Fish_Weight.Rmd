@@ -61,11 +61,32 @@ if(!require("Bolstad")) {install.packages("Bolstad");require("Bolstad")}
 
 ### Best Models
 
+```{r}
+library(leaps)
+regsubsets.out <-
+    regsubsets(Weight ~ .,
+               data = Perch,
+               nbest = 1,       # 1 best model for each number of predictors
+               nvmax = NULL,    # NULL for no limit on number of variables
+               force.in = NULL, force.out = NULL,
+               method = "exhaustive")
 
+summary.out <- summary(regsubsets.out)
+as.data.frame(summary.out$outmat)
+library(car)
+subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
+```
 
- 
+The best two regressor models are height and width.
+
 ### Best Two regressor model
 
+```{r}
+Perch2model=lm(Weight~Height+Width,data = Perch)
+summary.lm(Perch2model)
+```
+
+The best two regressor models used to predict weight for perch is height and weight.
 
 ## Pike
 
@@ -76,6 +97,8 @@ if(!require("Bolstad")) {install.packages("Bolstad");require("Bolstad")}
 ## Roach
 
 ### Best Models
+
+
 
 ### Best Two regressor model
 
