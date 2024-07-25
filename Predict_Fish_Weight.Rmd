@@ -150,4 +150,11 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 
 ### Best Two regressor model
 
+```{r}
+Roach2Model=lm(Weight~Length3-Width,data = Roach)
+summary.lm(Roach2Model)
+```
+
+The best regressor models for predicting weight for roach are width and length 3.
+
 ## Final Summary Statements
