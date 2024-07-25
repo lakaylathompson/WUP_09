@@ -116,6 +116,14 @@ subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2
 
 ### Best Two regressor model
 
+```{r}
+Pike2Model=lm(Weight~Length1+Length3,data = Pike)
+summary.lm(Pike2Model)
+```
+
+The best regressor models for predicting weight for pike are length 1 and length 3.
+
+
 ## Roach
 
 ### Best Models
