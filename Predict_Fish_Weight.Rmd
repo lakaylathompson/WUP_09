@@ -77,7 +77,7 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
 
-The best two regressor models to predict weight is height and width.
+The best two regressor models to predict weight are height and width.
 
 ### Best Two regressor model
 
@@ -159,4 +159,9 @@ The best regressor models for predicting weight for roach are width and length 3
 
 ## Final Summary Statements
 
+The best regressor models for perch were height and width.
+
+The best regressor models for pike were length 1 and length 3.
+
+The best regressor models for roach were length 3 and width.
 
